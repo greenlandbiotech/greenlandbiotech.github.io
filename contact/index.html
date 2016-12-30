@@ -3,22 +3,38 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Contact | Greenland Bio-tech</title>
+  <title>Greenland Bio-tech</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
+    <meta name="keywords" content="Greenland" />
   
   
   
-  <meta name="description" content="格瑞蓝达生物科技">
+  
+  <meta name="description" content="Beijing Greenland Biological Technology Company
+Address : Landianchang South 25 #618, Jia You International Building, Haidian District, Beijing
+Postal Code : 100097
+Phone : 010-88859860
+Fax : 010-8217">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Contact">
+<meta property="og:title" content="Greenland Bio-tech">
 <meta property="og:url" content="http://yoursite.com/contact/index.html">
 <meta property="og:site_name" content="Greenland Bio-tech">
-<meta property="og:description" content="格瑞蓝达生物科技">
-<meta property="og:updated_time" content="2016-12-29T02:46:36.000Z">
+<meta property="og:description" content="Beijing Greenland Biological Technology Company
+Address : Landianchang South 25 #618, Jia You International Building, Haidian District, Beijing
+Postal Code : 100097
+Phone : 010-88859860
+Fax : 010-8217">
+<meta property="og:image" content="http://yoursite.com/img/office.png">
+<meta property="og:updated_time" content="2016-12-30T08:12:34.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Contact">
-<meta name="twitter:description" content="格瑞蓝达生物科技">
+<meta name="twitter:title" content="Greenland Bio-tech">
+<meta name="twitter:description" content="Beijing Greenland Biological Technology Company
+Address : Landianchang South 25 #618, Jia You International Building, Haidian District, Beijing
+Postal Code : 100097
+Phone : 010-88859860
+Fax : 010-8217">
+<meta name="twitter:image" content="http://yoursite.com/img/office.png">
   
     <link rel="alternate" href="/atom.xml" title="Greenland Bio-tech" type="application/atom+xml">
   
@@ -88,10 +104,6 @@
                 
                   <li> <a class="main-nav-link" href="/archives">Archives</a> </li>
                 
-                  <li> <a class="main-nav-link" href="/categories">Categories</a> </li>
-                
-                  <li> <a class="main-nav-link" href="/tags">Tags</a> </li>
-                
                   <li> <a class="main-nav-link" href="/about">About</a> </li>
                 
                   <li> <a class="main-nav-link" href="/contact">Contact</a> </li>
@@ -151,16 +163,6 @@
   <div id="articleInner" class="article-inner">
     
     
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" class="article-title" itemprop="name">
-      Contact
-    </h1>
-  
-
-      </header>
-    
     <!--div class="article-meta">
       
 	<a href="/contact/index.html" class="article-date">
@@ -171,7 +173,139 @@
     </div-->
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="Beijing-Greenland-Biological-Technology-Company"><a href="#Beijing-Greenland-Biological-Technology-Company" class="headerlink" title="Beijing Greenland Biological Technology Company"></a>Beijing Greenland Biological Technology Company</h1><ul>
+<li>Address : Landianchang South 25 #618, Jia You International Building, Haidian District, Beijing</li>
+<li>Postal Code : 100097</li>
+<li>Phone : 010-88859860</li>
+<li>Fax : 010-82176872</li>
+<li>Email : huaixiangliu@sina.com</li>
+</ul>
+<p><img src="/img/office.png" width="350"></p>
+<script src="https://d3js.org/d3.v4.js"></script>
+
+
+<p>&lt;!DOCTYPE html&gt;</p>
+<p><meta charset="utf-8"></p>
+<style>
+
+<p>body {<br>  font-family: “Helvetica Neue”, Helvetica, Arial, sans-serif;<br>  margin: auto;<br>  position: relative;<br>  width: 960px;<br>}</p>
+<p>label {<br>  display: block;<br>}</p>
+<p>form {<br>  position: absolute;<br>  left: 20px;<br>  top: 20px;<br>}</p>
+<p></style><p></p>
+<p><form><br>  <label><input type="radio" name="mode" value="atc" checked> accelerate-then-coast</label><br>  <label><input type="radio" name="mode" value="cubic"> cubic-in-out</label><br>  <label><input type="radio" name="mode" value="linear"> linear</label><br></form></p>
+<script src="//d3js.org/d3.v3.min.js"></script>
+<script>
+
+var width = 960,
+    height = 500;
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height)
+  .append("g")
+    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+var gearBig = svg.append("g")
+    .datum({teeth: 32, radius: height * 2 / 5})
+    .attr("transform", "translate(" + -height * 1 / 5 + ",0)")
+  .append("g")
+    .attr("class", "gear");
+
+gearBig.append("path")
+    .style("fill", "gray")
+    .attr("d", pathGear);
+
+gearBig.append("path")
+    .style("fill", "black")
+    .style("fill-opacity", .3)
+    .attr("d", d3.svg.arc()({
+      innerRadius: 20,
+      outerRadius: height * 2 / 5 - 8,
+      startAngle: 0,
+      endAngle: Math.PI
+    }));
+
+var gearSmall = svg.append("g")
+    .datum({teeth: 16, radius: -height * 1 / 5})
+    .attr("transform", "translate(" + height * 2 / 5 + ",0)")
+  .append("g")
+    .attr("class", "gear");
+
+gearSmall.append("path")
+    .style("fill", "brown")
+    .attr("d", pathGear);
+
+gearSmall.append("path")
+    .style("fill", "black")
+    .style("fill-opacity", .3)
+    .attr("d", d3.svg.arc()({
+      innerRadius: 20,
+      outerRadius: height * 1 / 5 - 8,
+      startAngle: -Math.PI,
+      endAngle: 0
+    }));
+
+var gear = svg.selectAll(".gear");
+
+d3.selectAll("input")
+    .data([ease = easeReflect(easeAccelerateThenCoast(1.5), .5), d3.ease("cubic-in-out"), d3.ease("linear")])
+    .on("change", function(d) { ease = d; loop(); })
+    .call(loop);
+
+function loop() {
+  d3.transition().duration(10000).ease(ease).each(function() {
+    gear.transition().attrTween("transform", function(d) { return tweenRotate(360 * 32 * 3 / d.teeth * (d.radius < 0 ? -1 : +1)); });
+  }).transition().duration(500).each("end", loop);
+}
+
+function tweenRotate(angle) {
+  var i = d3.interpolateNumber(0, angle);
+  return function(t) { return "rotate(" + i(t) + ")"; };
+}
+
+function pathGear(d) {
+  var n = d.teeth,
+      r2 = Math.abs(d.radius),
+      r0 = r2 - 8,
+      r1 = r2 + 8,
+      r3 = d.annulus ? (r3 = r0, r0 = r1, r1 = r3, r2 + 20) : 20,
+      da = Math.PI / n,
+      a0 = -Math.PI / 2 + (d.annulus ? Math.PI / n : 0),
+      i = -1,
+      path = ["M", r0 * Math.cos(a0), ",", r0 * Math.sin(a0)];
+  while (++i < n) path.push(
+      "A", r0, ",", r0, " 0 0,1 ", r0 * Math.cos(a0 += da), ",", r0 * Math.sin(a0),
+      "L", r2 * Math.cos(a0), ",", r2 * Math.sin(a0),
+      "L", r1 * Math.cos(a0 += da / 3), ",", r1 * Math.sin(a0),
+      "A", r1, ",", r1, " 0 0,1 ", r1 * Math.cos(a0 += da / 3), ",", r1 * Math.sin(a0),
+      "L", r2 * Math.cos(a0 += da / 3), ",", r2 * Math.sin(a0),
+      "L", r0 * Math.cos(a0), ",", r0 * Math.sin(a0));
+  path.push("M0,", -r3, "A", r3, ",", r3, " 0 0,0 0,", r3, "A", r3, ",", r3, " 0 0,0 0,", -r3, "Z");
+  return path.join("");
+}
+
+// Like in-out reflection, except around the specified center.
+// If center = .5, this is the same as in-out reflection.
+function easeReflect(ease, center) {
+  return function(t) {
+    return t < center ? center * ease(t / center) : 1 - ease((1 - t) / (1 - center)) * (1 - center);
+  };
+}
+
+// Constant acceleration followed by constant speed.
+// If acceleration = 1, this is the same as quadratic easing.
+// If acceleration = Infinity, this is the same as linear easing.
+function easeAccelerateThenCoast(acceleration) {
+  if (acceleration < 1) throw new Error("unpossible");
+  if (!isFinite(acceleration)) return d3.ease("linear");
+  var speed = 2 * (acceleration - Math.sqrt((acceleration - 1) * acceleration)),
+      t0 = speed / 2 / acceleration;
+  return function(t) {
+    return t < t0 ? acceleration * t * t : speed * t - speed + 1;
+  };
+}
+
+</script>
       
     </div>
     <footer class="article-footer">
@@ -196,7 +330,7 @@
       <div class="row">
 	      <!--p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p-->
 	      <p id="copyRightEn">Copyright &copy; 2016 - 2016 Greenland Bio-tech All Rights Reserved.</p>
-	      <!--p id="copyRightCn">John Doe hold copyright</p-->
+	      <!--p id="copyRightCn">Carl Liu hold copyright</p-->
 	</div>
   </div>
 </footer>
@@ -222,10 +356,6 @@
     <a href="/" class="mobile-nav-link">Home</a>
   
     <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-    <a href="/categories" class="mobile-nav-link">Categories</a>
-  
-    <a href="/tags" class="mobile-nav-link">Tags</a>
   
     <a href="/about" class="mobile-nav-link">About</a>
   
@@ -329,7 +459,7 @@
             Greenland Bio-tech
           </div>
           <div class="panel-body">
-            Copyright © 2016 John Doe All Rights Reserved.
+            Copyright © 2016 Carl Liu All Rights Reserved.
           </div>
         </div>
       </div>

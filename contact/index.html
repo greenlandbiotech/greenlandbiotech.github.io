@@ -26,7 +26,7 @@ Postal Code : 100097
 Phone : 010-88859860
 Fax : 010-8217">
 <meta property="og:image" content="http://yoursite.com/img/office.png">
-<meta property="og:updated_time" content="2016-12-30T08:12:34.000Z">
+<meta property="og:updated_time" content="2016-12-30T14:00:33.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Greenland Bio-tech">
 <meta name="twitter:description" content="Beijing Greenland Biological Technology Company
@@ -100,13 +100,13 @@ Fax : 010-8217">
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
                 
-                  <li> <a class="main-nav-link" href="/">Home</a> </li>
+                  <li> <a class="main-nav-link" href="/">首页</a> </li>
                 
-                  <li> <a class="main-nav-link" href="/archives">Archives</a> </li>
+                  <li> <a class="main-nav-link" href="/archives">产品</a> </li>
                 
-                  <li> <a class="main-nav-link" href="/about">About</a> </li>
+                  <li> <a class="main-nav-link" href="/about">关于</a> </li>
                 
-                  <li> <a class="main-nav-link" href="/contact">Contact</a> </li>
+                  <li> <a class="main-nav-link" href="/contact">联系方式</a> </li>
                 
                   <li><div id="search-form-wrap">
 
@@ -118,7 +118,7 @@ Fax : 010-8217">
     <div class="ins-search-mask"></div>
     <div class="ins-search-container">
         <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <input type="text" class="ins-search-input" placeholder="请输入关键词..." />
             <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="ins-section-wrapper">
@@ -130,11 +130,11 @@ Fax : 010-8217">
 (function (window) {
     var INSIGHT_CONFIG = {
         TRANSLATION: {
-            POSTS: 'Posts',
-            PAGES: 'Pages',
-            CATEGORIES: 'Categories',
-            TAGS: 'Tags',
-            UNTITLED: '(Untitled)',
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(无标题)',
         },
         ROOT_URL: '/',
         CONTENT_URL: '/content.json',
@@ -166,7 +166,7 @@ Fax : 010-8217">
     <!--div class="article-meta">
       
 	<a href="/contact/index.html" class="article-date">
-	  <time datetime="2016-12-29T01:17:53.000Z" itemprop="datePublished">2016-12-29</time>
+	  <time datetime="2016-12-29T14:17:53.000Z" itemprop="datePublished">2016-12-29</time>
 	</a>
 
       
@@ -184,128 +184,7 @@ Fax : 010-8217">
 <script src="https://d3js.org/d3.v4.js"></script>
 
 
-<p>&lt;!DOCTYPE html&gt;</p>
-<p><meta charset="utf-8"></p>
-<style>
-
-<p>body {<br>  font-family: “Helvetica Neue”, Helvetica, Arial, sans-serif;<br>  margin: auto;<br>  position: relative;<br>  width: 960px;<br>}</p>
-<p>label {<br>  display: block;<br>}</p>
-<p>form {<br>  position: absolute;<br>  left: 20px;<br>  top: 20px;<br>}</p>
-<p></style><p></p>
-<p><form><br>  <label><input type="radio" name="mode" value="atc" checked> accelerate-then-coast</label><br>  <label><input type="radio" name="mode" value="cubic"> cubic-in-out</label><br>  <label><input type="radio" name="mode" value="linear"> linear</label><br></form></p>
-<script src="//d3js.org/d3.v3.min.js"></script>
-<script>
-
-var width = 960,
-    height = 500;
-
-var svg = d3.select("body").append("svg")
-    .attr("width", width)
-    .attr("height", height)
-  .append("g")
-    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
-
-var gearBig = svg.append("g")
-    .datum({teeth: 32, radius: height * 2 / 5})
-    .attr("transform", "translate(" + -height * 1 / 5 + ",0)")
-  .append("g")
-    .attr("class", "gear");
-
-gearBig.append("path")
-    .style("fill", "gray")
-    .attr("d", pathGear);
-
-gearBig.append("path")
-    .style("fill", "black")
-    .style("fill-opacity", .3)
-    .attr("d", d3.svg.arc()({
-      innerRadius: 20,
-      outerRadius: height * 2 / 5 - 8,
-      startAngle: 0,
-      endAngle: Math.PI
-    }));
-
-var gearSmall = svg.append("g")
-    .datum({teeth: 16, radius: -height * 1 / 5})
-    .attr("transform", "translate(" + height * 2 / 5 + ",0)")
-  .append("g")
-    .attr("class", "gear");
-
-gearSmall.append("path")
-    .style("fill", "brown")
-    .attr("d", pathGear);
-
-gearSmall.append("path")
-    .style("fill", "black")
-    .style("fill-opacity", .3)
-    .attr("d", d3.svg.arc()({
-      innerRadius: 20,
-      outerRadius: height * 1 / 5 - 8,
-      startAngle: -Math.PI,
-      endAngle: 0
-    }));
-
-var gear = svg.selectAll(".gear");
-
-d3.selectAll("input")
-    .data([ease = easeReflect(easeAccelerateThenCoast(1.5), .5), d3.ease("cubic-in-out"), d3.ease("linear")])
-    .on("change", function(d) { ease = d; loop(); })
-    .call(loop);
-
-function loop() {
-  d3.transition().duration(10000).ease(ease).each(function() {
-    gear.transition().attrTween("transform", function(d) { return tweenRotate(360 * 32 * 3 / d.teeth * (d.radius < 0 ? -1 : +1)); });
-  }).transition().duration(500).each("end", loop);
-}
-
-function tweenRotate(angle) {
-  var i = d3.interpolateNumber(0, angle);
-  return function(t) { return "rotate(" + i(t) + ")"; };
-}
-
-function pathGear(d) {
-  var n = d.teeth,
-      r2 = Math.abs(d.radius),
-      r0 = r2 - 8,
-      r1 = r2 + 8,
-      r3 = d.annulus ? (r3 = r0, r0 = r1, r1 = r3, r2 + 20) : 20,
-      da = Math.PI / n,
-      a0 = -Math.PI / 2 + (d.annulus ? Math.PI / n : 0),
-      i = -1,
-      path = ["M", r0 * Math.cos(a0), ",", r0 * Math.sin(a0)];
-  while (++i < n) path.push(
-      "A", r0, ",", r0, " 0 0,1 ", r0 * Math.cos(a0 += da), ",", r0 * Math.sin(a0),
-      "L", r2 * Math.cos(a0), ",", r2 * Math.sin(a0),
-      "L", r1 * Math.cos(a0 += da / 3), ",", r1 * Math.sin(a0),
-      "A", r1, ",", r1, " 0 0,1 ", r1 * Math.cos(a0 += da / 3), ",", r1 * Math.sin(a0),
-      "L", r2 * Math.cos(a0 += da / 3), ",", r2 * Math.sin(a0),
-      "L", r0 * Math.cos(a0), ",", r0 * Math.sin(a0));
-  path.push("M0,", -r3, "A", r3, ",", r3, " 0 0,0 0,", r3, "A", r3, ",", r3, " 0 0,0 0,", -r3, "Z");
-  return path.join("");
-}
-
-// Like in-out reflection, except around the specified center.
-// If center = .5, this is the same as in-out reflection.
-function easeReflect(ease, center) {
-  return function(t) {
-    return t < center ? center * ease(t / center) : 1 - ease((1 - t) / (1 - center)) * (1 - center);
-  };
-}
-
-// Constant acceleration followed by constant speed.
-// If acceleration = 1, this is the same as quadratic easing.
-// If acceleration = Infinity, this is the same as linear easing.
-function easeAccelerateThenCoast(acceleration) {
-  if (acceleration < 1) throw new Error("unpossible");
-  if (!isFinite(acceleration)) return d3.ease("linear");
-  var speed = 2 * (acceleration - Math.sqrt((acceleration - 1) * acceleration)),
-      t0 = speed / 2 / acceleration;
-  return function(t) {
-    return t < t0 ? acceleration * t * t : speed * t - speed + 1;
-  };
-}
-
-</script>
+<div class="form"><br><meta charset="utf-8"><br><style><br><br>body {<br>  font-family: “Helvetica Neue”, Helvetica, Arial, sans-serif;<br>  margin: auto;<br>  position: relative;<br>  width: 960px;<br>}<br><br>label {<br>  display: block;<br>}<br><br>form {<br>  position: absolute;<br>  left: 20px;<br>  top: 20px;<br>}<br><br></style><br><br><form><br>  <label><input type="radio" name="mode" value="atc" checked> accelerate-then-coast</label><br>  <label><input type="radio" name="mode" value="cubic"> cubic-in-out</label><br>  <label><input type="radio" name="mode" value="linear"> linear</label><br></form><br><br><script src="//d3js.org/d3.v3.min.js"></script><br><script><br><br>var width = 960,<br>    height = 500;<br><br>var svg = d3.select(“body”).append(“svg”)<br>    .attr(“width”, width)<br>    .attr(“height”, height)<br>  .append(“g”)<br>    .attr(“transform”, “translate(“ + width / 2 + “,” + height / 2 + “)”);<br><br>var gearBig = svg.append(“g”)<br>    .datum({teeth: 32, radius: height <em> 2 / 5})<br>    .attr(“transform”, “translate(“ + -height </em> 1 / 5 + “,0)”)<br>  .append(“g”)<br>    .attr(“class”, “gear”);<br><br>gearBig.append(“path”)<br>    .style(“fill”, “gray”)<br>    .attr(“d”, pathGear);<br><br>gearBig.append(“path”)<br>    .style(“fill”, “black”)<br>    .style(“fill-opacity”, .3)<br>    .attr(“d”, d3.svg.arc()({<br>      innerRadius: 20,<br>      outerRadius: height <em> 2 / 5 - 8,<br>      startAngle: 0,<br>      endAngle: Math.PI<br>    }));<br><br>var gearSmall = svg.append(“g”)<br>    .datum({teeth: 16, radius: -height </em> 1 / 5})<br>    .attr(“transform”, “translate(“ + height <em> 2 / 5 + “,0)”)<br>  .append(“g”)<br>    .attr(“class”, “gear”);<br><br>gearSmall.append(“path”)<br>    .style(“fill”, “brown”)<br>    .attr(“d”, pathGear);<br><br>gearSmall.append(“path”)<br>    .style(“fill”, “black”)<br>    .style(“fill-opacity”, .3)<br>    .attr(“d”, d3.svg.arc()({<br>      innerRadius: 20,<br>      outerRadius: height </em> 1 / 5 - 8,<br>      startAngle: -Math.PI,<br>      endAngle: 0<br>    }));<br><br>var gear = svg.selectAll(“.gear”);<br><br>d3.selectAll(“input”)<br>    .data([ease = easeReflect(easeAccelerateThenCoast(1.5), .5), d3.ease(“cubic-in-out”), d3.ease(“linear”)])<br>    .on(“change”, function(d) { ease = d; loop(); })<br>    .call(loop);<br><br>function loop() {<br>  d3.transition().duration(10000).ease(ease).each(function() {<br>    gear.transition().attrTween(“transform”, function(d) { return tweenRotate(360 <em> 32 </em> 3 / d.teeth <em> (d.radius &lt; 0 ? -1 : +1)); });<br>  }).transition().duration(500).each(“end”, loop);<br>}<br><br>function tweenRotate(angle) {<br>  var i = d3.interpolateNumber(0, angle);<br>  return function(t) { return “rotate(“ + i(t) + “)”; };<br>}<br><br>function pathGear(d) {<br>  var n = d.teeth,<br>      r2 = Math.abs(d.radius),<br>      r0 = r2 - 8,<br>      r1 = r2 + 8,<br>      r3 = d.annulus ? (r3 = r0, r0 = r1, r1 = r3, r2 + 20) : 20,<br>      da = Math.PI / n,<br>      a0 = -Math.PI / 2 + (d.annulus ? Math.PI / n : 0),<br>      i = -1,<br>      path = [“M”, r0 </em> Math.cos(a0), “,”, r0 <em> Math.sin(a0)];<br>  while (++i &lt; n) path.push(<br>      “A”, r0, “,”, r0, “ 0 0,1 “, r0 </em> Math.cos(a0 += da), “,”, r0 <em> Math.sin(a0),<br>      “L”, r2 </em> Math.cos(a0), “,”, r2 <em> Math.sin(a0),<br>      “L”, r1 </em> Math.cos(a0 += da / 3), “,”, r1 <em> Math.sin(a0),<br>      “A”, r1, “,”, r1, “ 0 0,1 “, r1 </em> Math.cos(a0 += da / 3), “,”, r1 <em> Math.sin(a0),<br>      “L”, r2 </em> Math.cos(a0 += da / 3), “,”, r2 <em> Math.sin(a0),<br>      “L”, r0 </em> Math.cos(a0), “,”, r0 <em> Math.sin(a0));<br>  path.push(“M0,”, -r3, “A”, r3, “,”, r3, “ 0 0,0 0,”, r3, “A”, r3, “,”, r3, “ 0 0,0 0,”, -r3, “Z”);<br>  return path.join(“”);<br>}<br><br>// Like in-out reflection, except around the specified center.<br>// If center = .5, this is the same as in-out reflection.<br>function easeReflect(ease, center) {<br>  return function(t) {<br>    return t &lt; center ? center </em> ease(t / center) : 1 - ease((1 - t) / (1 - center)) <em> (1 - center);<br>  };<br>}<br><br>// Constant acceleration followed by constant speed.<br>// If acceleration = 1, this is the same as quadratic easing.<br>// If acceleration = Infinity, this is the same as linear easing.<br>function easeAccelerateThenCoast(acceleration) {<br>  if (acceleration &lt; 1) throw new Error(“unpossible”);<br>  if (!isFinite(acceleration)) return d3.ease(“linear”);<br>  var speed = 2 </em> (acceleration - Math.sqrt((acceleration - 1) <em> acceleration)),<br>      t0 = speed / 2 / acceleration;<br>  return function(t) {<br>    return t &lt; t0 ? acceleration </em> t <em> t : speed </em> t - speed + 1;<br>  };<br>}<br><br></script><br></div>
       
     </div>
     <footer class="article-footer">
@@ -329,8 +208,8 @@ function easeAccelerateThenCoast(acceleration) {
   <div class="container">
       <div class="row">
 	      <!--p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p-->
-	      <p id="copyRightEn">Copyright &copy; 2016 - 2016 Greenland Bio-tech All Rights Reserved.</p>
-	      <!--p id="copyRightCn">Carl Liu hold copyright</p-->
+	      <p id="copyRightEn">Copyright &copy; 2016 - 2017 Greenland Bio-tech All Rights Reserved.</p>
+	      <!--p id="copyRightCn">Carl Liu 保留所有权利</p-->
 	</div>
   </div>
 </footer>
@@ -459,7 +338,7 @@ function easeAccelerateThenCoast(acceleration) {
             Greenland Bio-tech
           </div>
           <div class="panel-body">
-            Copyright © 2016 Carl Liu All Rights Reserved.
+            Copyright © 2017 Carl Liu All Rights Reserved.
           </div>
         </div>
       </div>
